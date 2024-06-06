@@ -1,10 +1,56 @@
 body {
   background: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
-.card {
-  display: inline-block;
-  margin: auto;
-  height: 500px;
-  width: 200px;
-  background-color: white;
+
+.container {
+  text-align: center;
+}
+
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 600px; /* Increased from 500px */
+    width: 400px; /* Increased from 300px */
+    background-color: black;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    font-size: 2rem;
+    border: 5px solid red;
+  }
+
+.top-suit,
+.number,
+.bottom-suit {
+  font-size: 3rem;
+}
+
+.top-suit,
+.bottom-suit {
+  position: absolute;
+}
+
+.top-suit {
+  top: 20px;
+  left: 20px;
+  transform: rotate(-45deg);
+}
+
+.bottom-suit {
+  bottom: 30px;
+  right: 40px;
+  transform: rotate(45deg);
+}
+
+.number {
+  font-size: 20rem;
+  color: black;
 }

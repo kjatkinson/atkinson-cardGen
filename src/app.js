@@ -1,43 +1,46 @@
 window.onload = function() {
-  //randomness for suit and number
+  // Randomness for suit and number
   const suits = ["♦", "♥", "♠", "♣"];
+  const suitSymbols = ["♦", "♥", "♠", "♣"];
   const randomSuitIndex = Math.floor(Math.random() * suits.length);
   const randomSuit = suits[randomSuitIndex];
+  const suitSymbol = suitSymbols[randomSuitIndex];
 
-  const values = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
+  const values = [
+    "A",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "J",
+    "Q",
+    "K"
+  ];
   const randomValueIndex = Math.floor(Math.random() * values.length);
   const randomValue = values[randomValueIndex];
 
-  //rows and insert icons/value
-  const topRow = document.querySelector(".topRow");
-  const middleRow = document.querySelector(".middleRow");
-  const bottomRow = document.querySelector(".bottomRow");
-  window.onload = function() {
-    //randomness for suit and number
-    const suits = ["♦", "♥", "♠", "♣"];
-    const randomSuitIndex = Math.floor(Math.random() * suits.length);
-    const randomSuit = suits[randomSuitIndex];
+  // Insert icons/value into the card
+  const topSuit = document.querySelector(".top-suit");
+  const number = document.querySelector(".number");
+  const bottomSuit = document.querySelector(".bottom-suit");
 
-    const values = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
-    const randomValueIndex = Math.floor(Math.random() * values.length);
-    const randomValue = values[randomValueIndex];
+  topSuit.textContent = suitSymbol;
+  number.textContent = randomValue;
+  bottomSuit.textContent = suitSymbol;
 
-    //rows and insert icons/value
-    const topRow = document.querySelector(".topRow");
-    const middleRow = document.querySelector(".middleRow");
-    const bottomRow = document.querySelector(".bottomRow");
-
-    const topTextNode = document.createTopElement("p");
-    const middleTextNode = document.createMiddleElement("p");
-    const bottomTextNode = document.createBottomElement("p");
-
-    topRow.appendChild("topElement");
-    topRow.appendChild("topRowElement");
-
-    // middleRowElement.appendChild(middleTextNode);
-    //middleRow.appendChild(middleRowElement);
-
-    //bottomRowElement.appendChild(bottomTextNode);
-    //bottomRow.appendChild(bottomRowElement);
-  };
+  // Change color for hearts and diamonds
+  if (randomSuit === "♥" || randomSuit === "♦") {
+    topSuit.style.color = "red";
+    bottomSuit.style.color = "red";
+    number.style.color = "red";
+  } else {
+    topSuit.style.color = "black";
+    bottomSuit.style.color = "black";
+    number.style.color = "black";
+  }
 };
